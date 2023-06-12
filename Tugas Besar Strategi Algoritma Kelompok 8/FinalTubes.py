@@ -126,7 +126,7 @@ def greedy_decrypt(text):
     print(end-start, 's')
     return decrypted
 
-
+#UI TKINTER
 def process_message():
     message = message_entry.get()
     shift = shift_entry.get()
@@ -136,7 +136,7 @@ def process_message():
         messagebox.showerror("Error", "Shift must be an integer")
         return
 
-    # Perform encryption or decryption based on the selected method
+   
     if method_var.get() == 1:
         result = brute_force_encrypt(message, shift)
     elif method_var.get() == 2:
@@ -146,17 +146,16 @@ def process_message():
     else:
         result = greedy_decrypt(message)
 
-    # Display the result
     output_text.delete('1.0', tk.END)
     output_text.insert(tk.END, result)
 
 
-# create the main window
+#main window
 window = tk.Tk()
 window.title("Caesar Cipher Encryption and Decryption")
 window.geometry("800x400")
 
-# create the input widgets
+#input 
 message_label = tk.Label(window, text="Enter the message:")
 message_label.pack()
 message_entry = tk.Entry(window)
@@ -167,7 +166,7 @@ shift_label.pack()
 shift_entry = tk.Entry(window)
 shift_entry.pack()
 
-# create a radio button for method selection
+#buat select metode
 method_var = tk.IntVar()
 encrypt_radio = tk.Radiobutton(window, text="Brute Force Encrypt", variable=method_var, value=1)
 encrypt_radio.pack()
@@ -178,16 +177,16 @@ greedy_encrypt_radio.pack()
 greedy_decrypt_radio = tk.Radiobutton(window, text="Greedy Decrypt", variable=method_var, value=4)
 greedy_decrypt_radio.pack()
 
-# create the button to start the encryption/decryption process
+#process button
 process_button = tk.Button(window, text="Process", command=process_message)
 process_button.pack()
 
-# create the output widgets
+#output
 output_label = tk.Label(window, text="Result:")
 output_label.pack()
 output_text = tk.Text(window)
 output_text.pack()
 
-# start the event loop
+
 window.mainloop()
 
