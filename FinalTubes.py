@@ -2,6 +2,16 @@ import tkinter as tk
 from tkinter import messagebox
 from timeit import default_timer as timer
 
+#Tugas Besar Strategi Algoritma
+
+"""
+KELOMPOK 8
+Muhammad Ali Akbar Filayati (1301204493)
+Dhandy Faridsyah Akbar (1301204356)
+Virdi Rizky Elnanda (1301210490)
+"""
+
+
 def brute_force_encrypt(text, shift):
     start=timer()
     encrypted = ""
